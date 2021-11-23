@@ -1,0 +1,152 @@
+$softBlue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
+$veryDarkBlueMain: hsl(217, 54%, 11%);
+$veryDarkBlueCard: hsl(216, 50%, 16%);
+$veryDarkBlueLine: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+$mainFontSize: 18px;
+
+$primarySpacing: 22px;
+$inlineSpacing: 16px;
+
+$roundnessPrimary: 16px;
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 300ms;
+}
+
+h1 {
+  font-size: $mainFontSize;
+  font-family: "Outfit", sans-serif;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $veryDarkBlueMain;
+}
+
+.card {
+  width: 306px;
+  height: 556px;
+  display: inline;
+  border-radius: $roundnessPrimary;
+  background-color: $veryDarkBlueCard;
+  padding: $primarySpacing $primarySpacing $primarySpacing $primarySpacing;
+  box-shadow: 0px 20px 0px 12px #101c2e;
+
+  .showcase {
+    &:hover {
+      &:before {
+        position: absolute;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        opacity: 0.7;
+        border-radius: $roundnessPrimary;
+        z-index: 99;
+        content: url(/images/icon-view.svg);
+        background-color: $cyan;
+      }
+    }
+    img {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: $roundnessPrimary;
+    }
+  }
+
+  .line {
+    background-color: $softBlue;
+  }
+
+  .primary {
+    color: $white;
+    margin-top: $primarySpacing;
+    &:hover {
+      color: $cyan;
+      cursor: pointer;
+    }
+  }
+
+  .secondary {
+    color: $softBlue;
+    margin-top: $primarySpacing;
+    font-weight: 300;
+  }
+
+  .pricing {
+    margin-top: $primarySpacing;
+    .highlight {
+      color: $cyan;
+      margin-top: $primarySpacing;
+      display: inline;
+    }
+
+    .duration {
+      color: $softBlue;
+      display: inline;
+      float: right;
+
+      img {
+        display: inline;
+      }
+
+      h1 {
+        display: inline;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .spacer {
+    width: 100%;
+    height: 1px;
+    margin-top: $primarySpacing;
+    background-color: $veryDarkBlueLine;
+  }
+
+  .creator {
+    margin-top: $primarySpacing;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 33px;
+      height: 33px;
+      margin-right: $inlineSpacing;
+    }
+
+    h1 {
+      color: $softBlue;
+      font-weight: 300;
+    }
+
+    .name {
+      color: $white;
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.fem-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  color: $softBlue;
+}
